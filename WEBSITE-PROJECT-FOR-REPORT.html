@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShriJi Agro Product</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header {
+            margin: 2px;
+            padding: 2px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+
+        
+        }
+        .support {
+            margin: 0;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            
+        }
+        .short {
+            font-family:'Times New Roman', Times, serif;
+           font-style: oblique;
+
+            text-align: end;
+            
+            
+        }
+        .bold {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+            text-align: end;
+            
+           
+        }
+        .imag {
+
+            display: flex;
+            justify-content: end;
+            align-items: end;
+        }
+        .search {
+            display: block;
+            margin: auto;
+        }
+        .search-bar{
+           width: 400px;
+           border-radius: 20px;
+           padding: 10px;
+           border: 2px solid green;
+        }
+        .search-button {
+            padding: 6px;
+            border-radius: 10px;
+        }
+       .frst-div {
+        width:auto;
+        height: 2px;
+        background-color: green;
+       }
+       .nav3 {
+    background-color: rgb(132, 184, 90);
+    margin: 0;
+    padding: 5px;
+
+    position: sticky; 
+    top: 0;             
+    z-index: 1000;      
+}
+
+
+    .nav3 ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        
+    }
+    .nav3 li {
+        display: inline;
+        
+    }
+    .nav3 a{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        padding: 5px;
+        position: relative;
+        display: block;
+
+        
+        float: left;
+        display: block;
+  
+}
+        
+    
+    .nav3 button {
+        border-radius: 20px;
+        background-color: rgb(3, 90, 7);
+        color: white;
+        padding: 07px;
+        margin: 2px;
+    }
+    .nav3 button:hover {
+        background-color: rgb(158, 163, 113);
+        cursor:pointer;
+        content: icon;
+    }
+    .nav3 a::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: #0a65c7;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+      .nav3 a:hover::after {
+        transform: scaleX(1);
+      }
+      .nav3 .dropdown_c {
+        display: none;
+      }
+
+    .nav3 .DROPDOWN:hover .dropdown_c {
+        display: block;
+        position: absolute;
+        background-color: rgb(200, 240, 107);
+        color: black;
+        min-width: 150px;
+        
+    }
+    .video {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(132, 184, 90) ;
+    }
+    .vdeo {
+        width: 1350px;
+        margin-bottom: 0;
+    }   
+    .banner {
+        margin: 0;
+        padding: 2px;
+        background-color: rgb(132, 184, 90);
+        height: 60px;
+    }
+    .content {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+       font-size: 40px;
+        color: white;
+        padding: 0;
+        margin: 0;
+    }
+    pre {
+        margin: 0;
+        padding: 0;
+    }
+    .rect {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            margin: 20px;
+            padding: 20px;
+        }
+        .cardd {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); 
+            gap: 30px; 
+            width: 100%;
+            max-width: 1200px; 
+        }
+        .card-cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; 
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        .card-cont:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .logocrd {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            background: white; 
+            padding: 8px;
+            border: 2px solid var(--primary);
+        }
+        .txt h4 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .txxt {
+            font-size: 14px;
+            color: #333;
+            margin: 0;
+        }
+
+    .cate-text {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 10px;
+        padding: 10px;
+        color: rgb(132, 184, 90);
+    }
+    .cat-big-text {
+        margin: 20px;
+    }
+    .pop-card {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            margin: 20px;
+            gap: 30px;
+        }
+        .pop {
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            padding: 15px;
+            background: white;
+            transition: var(--transition);
+        }
+        .pop:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+        }
+   .pop-img {
+            height: 200px;
+            width: 200px;
+            margin: auto;
+            display: block;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+           
+    .pp-crd-txt {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 30px 15px;
+}
+
+.text-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.tea-name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tea-qt {
+    color: grey;
+    font-size: smaller;
+    margin: 2px 0 0 0;
+}
+
+.prc {
+    font-size: large;
+    font-weight: 600;
+    margin: 0;
+}
+   
+   .crd3-title {
+    color: rgb(132, 184, 90);
+    text-align: center;
+    font-size: 17px;
+    margin: 05px;
+    padding: 10px;
+    padding-bottom: 0;
+    font-weight: bold;
+    margin-top: 50px;
+   }
+   .crd3-subttl {
+    text-align: center;
+    padding-top: 0;
+    margin: 3px;
+    font-family: var(--headingtext);
+    color: rgb(4, 36, 13);
+    font-size: 40px;
+   }
+   .crd3-popcnt {
+    border: 1px dotted;
+    border-radius: 6px;
+    border-color: black;
+   }
+    .crd3-pop {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        justify-content: space-between;
+        gap: 20px;
+        margin: 20px;
+        
+    }
+    .crd3-popcnt {
+        padding: 10px;
+        background-color: rgb(178, 221, 121);
+    }
+    .cr3-pop-head{
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+        color:rgb(4, 36, 13) ;
+    }
+    .cr3-pop-text {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .crd3-popcnt:hover {
+        border: 2px solid;
+        border-color: black;
+       
+    }
+    .crd4-pop {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        height: 50vh;
+        border: 1px solid black;
+        margin: 100px;
+        border-radius: 10px;
+
+    } 
+    .crd4-pop:hover {
+       margin:70px;
+       border: 2px solid greenyellow;
+    }
+    .crd4pop-cnt {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .crd4-img {
+        width: 500px;
+        height: fit-content;
+    }
+       
+    .crd4pop-txt {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        margin: 0;
+        gap: 0;
+    }
+    .crd4-head {
+        margin-top: 15px;
+       margin-bottom: 0;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        
+        color: grey;
+        
+    }
+    .crd4-text {
+        margin: 0;
+        padding: 5px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+        color: green;
+        font-weight: bolder;
+    }
+    .crd4-btn {
+      
+        border: 1px solid black;
+        border-radius: 7px;
+        background-color: yellowgreen;
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .crd4-btn:hover {
+        background-color: black;
+        color: aliceblue;
+        cursor: pointer;
+    }
+    .crd4-clk {
+        display: grid;
+        grid-template-columns: repeat(5,0.2fr);
+        gap: 1px;
+        width: fit-content;
+        height: fit-content;
+       
+       
+        
+    }
+    .clk {
+        border: 1px solid grey;
+        border-radius: 50px;
+        padding: 10px;
+        width: 20px;
+        text-align: center;
+        font-weight:bolder ;
+        width: fit-content;
+    }
+    .colon {
+      font-size: 32px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .crd5-pop-img {
+        width: 500px;
+        height: 300px;
+        
+    }
+    .card5-pp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        border: 1px solid black;
+        margin: 100px;
+        border-radius: 10px;
+    }
+    .crd5-pop {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin: 30px;
+    }
+    .crd5-cnt {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .crd5-txt {
+        margin-top: 70px;
+    }
+    .crd5-subtxt {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .crd5-head {
+        font-weight: bolder;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+        font-size: 25px;
+        color: rgb(17, 58, 13);
+    }
+    .crd5-email {
+        padding: 10px;
+        border-style: solid;
+        border-radius: 10px;
+        margin: 10px 0px;
+    }
+    .crd5-email:hover {
+        border-color: black;
+        background-color: rgb(178, 206, 123);
+        
+    }
+    .card5-pp:hover {
+        border: 2px solid rgb(121, 216, 84);
+    }
+    .crd5-sub {
+        padding: 09px;
+        border-radius: 10px;
+        background-color: rgb(151, 235, 72);
+        font-weight: bolder;
+
+    }
+    .crd5-sub:hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+    .empty {
+         width:auto;
+        height: 2px;
+        background-color: green;
+       
+    }
+    .foot {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        padding: 20px;
+        margin: 20px;
+    }
+    .foot-contact {
+        font-weight: 25px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 10px;
+        margin-top: 25px;
+    }
+    .foot-link {
+        font-weight: bolder;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 10px;
+        color: rgb(8, 48, 11);
+
+    }
+    .foot-list {
+        list-style-type:none;
+        margin: 0;
+        padding: 5px;
+    }
+    .foot-a {
+        text-decoration: none;
+        color: grey;
+        padding: 5px;
+        margin: 0;
+        
+    }
+     .foot-a:hover {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        padding: 5px;
+        margin: 0;
+        font-size: larger;
+    }
+   
+    .copyright {
+        background-color: rgb(183, 240, 129);
+        padding: 15px;
+        text-align: center;
+        color: rgb(61, 59, 59);
+        font-size: 18px;
+    }
+     @media (max-width:768px){
+            .header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .support {
+                justify-content: center;
+            }
+            .search-bar {
+                width: 90%;
+            }
+            .nav3 ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .banner {
+                height: auto;
+                padding: 10px;
+            }
+        }
+        @media (max-width:480px){
+            .content {
+                font-size: 20px;
+            }
+            .tea-name {
+                font-size: 16px;
+            }
+            .prc {
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+
+   <div class="header">
+     <span class="logo">
+        <img src="shri agro logo.png" alt="Campany logo">
+    </span>
+
+    <span class="search">
+        <form>
+            <input class="search-bar"  type="search" name="search-bar" id="search" placeholder="ENTER YOUR SEARCH ">
+            <button class="search-button">&#128269;</button>
+        </form>
+
+    </span>
+    
+    <span class="support">
+        <span class="num">
+        <div class="short">
+                Support 24/7
+            </div >
+
+            <div  class="bold">
+                +91 1294072297
+            </div >
+    </span>
+        <span class="imag">
+            <img src="support.png" alt="support" height="70px" width="70px">
+        </span>
+
+    </span>
+   </div>
+
+   <div class="frst-div">
+    <p></p>
+   </div>
+
+    <div class="nav_cantainer">
+        
+        <nav class="nav3">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li class="DROPDOWN"><a href="#">ABOUT</a>
+                <div class="dropdown_c">
+                    <a href="#">OUR STORY</a>
+                    <a href="#">TEAM</a>
+                    <a href="#">CONTACT US</a>
+                </div>
+                <li class="DROPDOWN"><a href="#">PRODUCTS</a>
+                <div class="dropdown_c">
+                    <a href="#">Classic Tea</a>
+                    <a href="#">Elaichi Tea</a>
+
+                </div>
+                </li>
+                
+                <li><a href="#">BLOG</a></li>
+                <li><button class="login_btn"  type="button">LOGIN</button></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="video">
+        <video class="vdeo" src="SHRI AGRO VIDEO.mp4" autoplay loop preload="auto" ></video>
+    </div>
+
+    <div class="banner">
+        <marquee  scrollamount="15" >
+            <pre class="content">
+                &star;Classic Tea               &star;Masala Tea                &star;Elaichi Tea               &star;Loose Tea               &star;Premix 
+            </pre>
+        </marquee>
+    </div>
+    
+    <div class="card1">
+    <div class="rect">
+        <div class="cardd">
+
+            <div class="card-cont">
+                <img src="free shipping.png" alt="free shipping" class="logocrd">
+                <div class="txt">
+                    <h4>Free Shipping</h4>
+                    <p class="txxt">You get your items delivered without any extra cost.</p>
+                </div>
+            </div>
+
+            <div class="card-cont">
+                <img src="247.png" alt="great support" class="logocrd">
+                <div class="txt">
+                    <h4>Great Support</h4>
+                    <p class="txxt">Our customer support team is available around the clock.</p>
+                </div>
+            </div>
+
+            <div class="card-cont">
+                <img src="return.jpg" alt="Return" class="logocrd">
+                <div class="txt">
+                    <h4>Easy Return</h4>
+                    <p class="txxt">Making it easy to return any items if you're not satisfied.</p>
+                </div>
+            </div>
+
+            <div class="card-cont">
+                <img src="securepaymet.jpg" alt="securepayment" class="logocrd">
+                <div class="txt">
+                    <h4>Secure Payment</h4>
+                    <p class="txxt">Shop with confidence knowing that our secure payment.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    
+    <div class="card2">
+        <h3 class="cate-text">&star;Categories</h3>
+        <h1 class="cat-big-text">
+            Browse Top Category
+        </h1>
+            <div class="pop-card">
+                <div class="pop">
+                    <img src="classic chai.png" alt="classic chai" class="pop-img">
+                    <div class="pp-crd-txt">
+             <div class="text-left">
+                <h3 class="tea-name">Classic Tea</h3>
+                <p class="tea-qt">100gm</p>
+            </div>
+            <p class="prc">&#8377;50</p>
+        </div>
+        </div>
+
+         <div class="pop">
+        <img src="elaichi chai.png" alt="elaichi chai" class="pop-img">
+        <div class="pp-crd-txt">
+            <div class="text-left">
+                <h3 class="tea-name">Elaichi Tea</h3>
+                <p class="tea-qt">100gm</p>
+            </div>
+            <p class="prc">&#8377;70</p>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="card3">
+        <p class="crd3-title">&star; Work Processing &star;</p>
+        <h2 class="crd3-subttl">How it Work processing</h2>
+        <div class="crd3-pop">
+            <div class="crd3-popcnt">
+                <h2 class="cr3-pop-head">1.Requirement Analysis</h2>
+                <p class="cr3-pop-text">Understanding client needs for manufacturing and packaging. Conducting market research.</p>
+            </div>
+            <div class="crd3-popcnt">
+                <h2 class="cr3-pop-head">2.Procurement</h2>
+                <p class="cr3-pop-text">Selecting high-quality raw materials from trusted suppliers. Ensuring compliance with industry standards.</p>
+            </div>
+            <div class="crd3-popcnt">
+                <h2 class="cr3-pop-head">3.Processing</h2>
+                <p class="cr3-pop-text">Utilizing advanced machinery and technology for efficient production. Maintaining strict hygiene.</p>
+            </div>
+            <div class="crd3-popcnt">
+                <h2 class="cr3-pop-head">4.Quality Assurance</h2>
+                <p class="cr3-pop-text">Conducting multiple quality checks, including chemical, physical, and microbiological testing.</p>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="card4">
+        <div class="crd4-pop">
+            <div class="crd4pop-cnt">
+
+                <div class="crd4pop-txt">
+                    <div>
+                        <h3 class="crd4-head">&dbkarow;Deal Of The Week</h3>
+                    </div>
+                    <div>
+                        <p class="crd4-text">Hurry Up! Offer ends in. Get
+                           UP TO 30% OFF</p>
+                    </div>
+                    <div class="crd4-clk">
+                        <p class="clk">0
+                            day
+                        </p>
+                        <p class="clk">0
+                            hrs
+                        </p>
+                        <p class="colon">:</p>
+                        <p class="clk">0
+                            min
+                        </p>
+                        <p class="clk">0
+                            sec
+                        </p>
+                        
+                    </div>
+                    <div>
+                        <a class="crd4-btn" href="*">SHOP NOW!</a>
+                    </div>
+                </div>
+                <div class="crd4pop-img">
+                    <img src="deal.jpg" alt="dealoftheweek" class="crd4-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card5">
+        <div class="card5-pp">
+
+            <div class="crd5-pop">
+                <div class="crd5-cnt">
+                    <div class="crd5-txt">
+                        <p class="crd5-subtxt">Our Newsletter</p>
+                        <h3 class="crd5-head">Get weekly update. Sign up and get up to 20% off your first purchase</h3>
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Enter Your Email" name="email" id="email" class="crd5-email">
+                        <button type="submit" class="crd5-sub">Submit</button>
+                    </div> 
+                </div>
+                <div class="crd5-img">
+                    <img src="teacup.jpg" alt="tea-image" class="crd5-pop-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card6">
+        <div class="empty">
+            <p></p>
+        </div>
+        <div class="foot">
+            <div class="fot-cnt1">
+                <div class="foot-img">
+                    <img src="shri agro logo.png" alt="campany logo" class="foot-logo">
+                </div>
+                <div class="foot-contact">
+                    <p>&phone;+91 1294072297</p>
+                    <p>&#9993;info@shrijiagro.com</p>
+                </div>
+
+            </div>
+            <div class="fot-cnt2">
+                <h3 class="foot-link">
+                    Customer Services
+                </h3>
+                <ul class="foot-list">
+                    <li><a href="#" class="foot-a">&star;Collections & Delivery</a></li>
+                    <li><a href="#" class="foot-a">&star;Returns & Refunds</a></li>
+                    <li><a href="#" class="foot-a">&star;Terms & Conditions</a></li>
+                    <li><a href="#" class="foot-a">&star;Delivery Return</a></li>
+                    <li><a href="#" class="foot-a">&star;FAQ</a></li>
+                </ul>
+            </div>
+            <div class="fot-cnt3">
+                 <h3 class="foot-link">
+                    Quick Links
+                </h3>
+                <ul class="foot-list">
+                    <li><a href="#" class="foot-a">&star;Privacy Policy</a></li>
+                    <li><a href="#" class="foot-a">&star;Terms Of Use</a></li>
+                    <li><a href="#" class="foot-a">&star;Contact</a></li>
+                    <li><a href="#" class="foot-a">&star;Login / Register</a></li>
+                </ul>
+
+            </div>
+            <div class="fot-cnt4">
+                 <h3 class="foot-link">
+                    Come Our Store
+                </h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d267154.95153564!2d77.14286290180286!3d28.384517710887142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDIyJzA2LjQiTiA3N8KwMTgnNTAuNSJF!5e0!3m2!1sen!2sin!4v1750322003572!5m2!1sen!2sin" width="100%"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="empty">
+        <p></p>
+    </div>
+
+    <div class="copyright">
+            &copy;Designed by Aashish for Shriji Agro Products
+    </div>
+   
+    <script src="script.js"></script>
+</body>
+</html>
