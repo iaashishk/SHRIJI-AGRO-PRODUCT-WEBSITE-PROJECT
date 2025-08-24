@@ -6,8 +6,6 @@ The website is designed to showcase company details, products, and services thro
 
 🎯 Features
 
-Responsive design for desktop and mobile
-
 Product showcase section
 
 Company information and services details
